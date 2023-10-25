@@ -2,14 +2,19 @@
 
 <ul *ngFor="let product of products">
     <li>
-        <h3>{{product.name}}</h3>
+        <h3 [title]="'it costs $' + product.price">
+            <a href="">{{product.name}}</a>
+        </h3>
         
-        <p>{{product.description}}</p>
-        <small *ngIf="product.name === 'sample'">hello world kkkkk</small>
+        <p *ngIf="product.description">{{product.description}}</p>
+        <small *ngIf="!product.description">no description available</small>
+
+        <button (click)="share()">share</button>
     </li>
 </ul>
 
-<button (click)="addProduct({id: 5, name: 'sample', description: 'kkkk'})"> add new product :)</button>
+<app-product-alerts />
+<button (click)="addProduct({id: 5, name: 'sample', description: ''})"> add new product :)</button>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

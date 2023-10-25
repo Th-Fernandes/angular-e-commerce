@@ -22,7 +22,7 @@ export const products = [
     id: 3,
     name: 'Phone Standard',
     price: 299,
-    description: 'just a regula phone for regular people :)'
+    description: ''
   }
 ];
 

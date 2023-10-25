@@ -1,4 +1,6 @@
-
+li {
+    list-style-type: none;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
