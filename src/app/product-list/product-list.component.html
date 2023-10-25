@@ -3,8 +3,9 @@
 <ul *ngFor="let product of products">
     <li>
         <h3>{{product.name}}</h3>
-
+        
         <p>{{product.description}}</p>
+        <small *ngIf="product.name === 'sample'">hello world kkkkk</small>
     </li>
 </ul>
 
