@@ -10,12 +10,14 @@ import { products } from '../products';
 export class ProductListComponent {
   products = [...products];
 
-  addProduct(product: any) {
+  addProduct(product: typeof this.products[number]) {
     this.products = [...this.products, product];
   }
 
-  share() {
-    window.alert('The product has been shared!');
+  share(productId: number) {
+    const product = this.products.find(p => p.id === productId);
+
+    if (product) window.alert(`${product.name} has been shared!`);
   }
 }
 

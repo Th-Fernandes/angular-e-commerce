@@ -9,12 +9,12 @@
         <p *ngIf="product.description">{{product.description}}</p>
         <small *ngIf="!product.description">no description available</small>
 
-        <button (click)="share()">share</button>
+        <button (click)="share(product.id)">share</button>
+        <app-product-alerts [product]="product"/>
     </li>
 </ul>
 
-<app-product-alerts />
-<button (click)="addProduct({id: 5, name: 'sample', description: ''})"> add new product :)</button>
+<button (click)="addProduct({id: 5, name: 'sample', description: '', price: 999})"> add new product :)</button>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
