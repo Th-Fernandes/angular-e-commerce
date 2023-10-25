@@ -10,6 +10,10 @@ import { products } from '../products';
 export class ProductListComponent {
   products = [...products];
 
+  addProduct(product: any) {
+    this.products = [...this.products, product];
+  }
+
   share() {
     window.alert('The product has been shared!');
   }

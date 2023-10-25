@@ -1,5 +1,14 @@
 <h2>Products</h2>
 
+<ul *ngFor="let product of products">
+    <li>
+        <h3>{{product.name}}</h3>
+
+        <p>{{product.description}}</p>
+    </li>
+</ul>
+
+<button (click)="addProduct({id: 5, name: 'sample', description: 'kkkk'})"> add new product :)</button>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
