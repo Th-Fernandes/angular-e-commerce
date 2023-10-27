@@ -1,7 +1,7 @@
 <h2>Products</h2>
 
-<ul *ngFor="let product of products">
-    <li>
+<ul>
+    <li *ngFor="let product of products">
         <h3 [title]="'it costs $' + product.price">
             <a href="">{{product.name}}</a>
         </h3>
@@ -10,7 +10,10 @@
         <small *ngIf="!product.description">no description available</small>
 
         <button (click)="share(product.id)">share</button>
-        <app-product-alerts [product]="product"/>
+        <app-product-alerts 
+            [product]="product"
+            (notify)="onNotify()"
+        />
     </li>
 </ul>
 
