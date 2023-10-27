@@ -1,5 +1,13 @@
 <section>
   <p>
-    <a [routerLink]="'/'">go back to products page</a>
+    <a [routerLink]="'/'"> <b><--</b> go back to products page</a>
   </p>
+
+  <h2>Product details</h2>
+
+  <div *ngIf="product">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.price | currency}}</p>
+    <p>{{ product.description }}</p>
+  </div>
 </section>
