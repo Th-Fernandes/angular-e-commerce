@@ -1,26 +1,32 @@
-<h2>Products</h2>
+<section>
+  <h2>Products</h2>
+  <p>check <em>all the best prices</em> out!</p>
 
-<ul>
+  <ul>
     <li *ngFor="let product of products">
-        <h3 [title]="'it costs $' + product.price">
-            <a href="">{{product.name}}</a>
-        </h3>
-        
-        <p *ngIf="product.description">{{product.description}}</p>
-        <small *ngIf="!product.description">no description available</small>
+      <h3>
+        <a [title]="'it costs $' + product.price" href="'/' + product.name">{{
+          product.name
+        }}</a>
+      </h3>
 
-        <button (click)="share(product.id)">share</button>
-        <app-product-alerts 
-            [product]="product"
-            (notify)="onNotify()"
-        />
+      <p>
+        {{ product.description || "no description available" }}
+      </p>
+
+      <button (click)="share(product.id)">share</button>
+      <app-product-alerts [product]="product" (notify)="onNotify()" />
     </li>
-</ul>
+  </ul>
+  <button
+    (click)="addProduct({ id: 5, name: 'sample ' + products.length, description: '', price: 999 })"
+  >
+    add new product :)
+  </button>
 
-<button (click)="addProduct({id: 5, name: 'sample', description: '', price: 999})"> add new product :)</button>
-
-<!-- 
+  <!-- 
+</section>
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
 can be found in the LICENSE file at https://angular.io/license
--->
+--></section>
