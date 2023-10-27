@@ -5,9 +5,12 @@
   <ul>
     <li *ngFor="let product of products">
       <h3>
-        <a [title]="'it costs $' + product.price" href="'/' + product.name">{{
-          product.name
-        }}</a>
+        <a 
+          [routerLink]="'/products/' + product.id"
+          [title]="'it costs $' + product.price" href="'/' + product.name"
+        >
+          {{ product.name }}
+      </a>
       </h3>
 
       <p>
