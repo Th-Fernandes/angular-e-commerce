@@ -1,0 +1,8 @@
+<section>
+  <ul>
+    <li *ngFor="let shipping of shippingCosts | async">
+      <p> {{shipping.price | currency}}</p>
+      <p>{{shipping.type}}</p>
+    </li>
+  </ul>
+</section>

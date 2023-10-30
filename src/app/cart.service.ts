@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Product } from './products';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
   items: Product[] = [];
+
+  constructor(private http: HttpClient ) { }
 
   addProductToCart(product : Product) { 
     this.items.push(product); 
@@ -16,12 +19,17 @@ export class CartService {
   }
 
   removeProduct(product : Product) { 
-    const hasProduct = this.items.findIndex(p => p.id === product.id);
-    console.log(hasProduct)
-    if (hasProduct) this.items.splice(hasProduct, 1);
+    const productIndex = this.items.findIndex(p => p.id === product.id);
+    if (productIndex >= 0) this.items.splice(productIndex, 1);
   }
 
   clearCart() {
     this.items = [];     
+  }
+
+  getShippingPrices() {
+    return this.http
+      .get<{type: string, price: number}[]>
+      ('/assets/shipping.json')
   }
 }

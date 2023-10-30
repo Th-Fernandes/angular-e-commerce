@@ -1,5 +1,10 @@
 <section>
-  <div *ngIf="!productsOnCart">
+  <h3>Cart</h3>
+
+  <p>
+    <a routerLink="/shipping">check out shipping price</a>
+  </p>
+  <div *ngIf="productsOnCart.length == 0">
     <h1>Nothing to look at :(</h1>
     <button routerLink="/">go back to products section</button>
   </div>
