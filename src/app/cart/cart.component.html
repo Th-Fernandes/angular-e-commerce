@@ -1,0 +1,13 @@
+<section>
+  <div *ngIf="!productsOnCart">
+    <h1>Nothing to look at :(</h1>
+    <button routerLink="/">go back to products section</button>
+  </div>
+
+  <ul class="cart-item" *ngFor="let product of productsOnCart">
+    <li>
+      {{product.name}}
+      <button (click)="removeProduct(product)">remove from cart</button>
+    </li>
+  </ul>
+</section>

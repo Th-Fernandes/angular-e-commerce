@@ -9,5 +9,7 @@
     <h3>{{ product.name }}</h3>
     <p>{{ product.price | currency}}</p>
     <p>{{ product.description }}</p>
+
+    <button (click)="addProductToCart(product)">Put product on cart</button>
   </div>
 </section>
