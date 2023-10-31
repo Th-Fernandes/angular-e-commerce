@@ -9,10 +9,13 @@
     <button routerLink="/">go back to products section</button>
   </div>
 
-  <ul class="cart-item" *ngFor="let product of productsOnCart">
-    <li>
-      {{product.name}}
-      <button (click)="removeProduct(product)">remove from cart</button>
-    </li>
+  <ul class="cart-item">
+    <p>
+      <li *ngFor="let product of productsOnCart; let i = index">
+        {{i}} {{product.name}}
+        <button (click)="removeProduct(product)">remove from cart</button>
+      </li>
+    </p>
+    <button *ngIf="productsOnCart.length != 0" (click)="clearCart()">clear all products on cart</button>
   </ul>
 </section>

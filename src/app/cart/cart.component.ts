@@ -17,4 +17,8 @@ export class CartComponent {
   removeProduct(product: Product) {
     this.cartService.removeProduct(product);
   }
+
+  clearCart() {
+    this.cartService.clearCart();
+  }
 }
