@@ -15,6 +15,7 @@ export class CartService {
   };
   
   getProductsFromCart() {
+    console.log(this.items)
     return this.items;
   }
 
@@ -24,8 +25,7 @@ export class CartService {
   }
 
   clearCart() {
-    this.items = [];    
-    return this.items   
+    this.items = [];      
   }
 
   getShippingPrices() {
